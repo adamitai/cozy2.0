@@ -1,0 +1,109 @@
+html
+    head
+        script(src='javascripts/jquery.min.js')
+        script(src='javascripts/bootstrap.min.js')
+        script(src='javascripts/moments.js')
+        script(src='javascripts/livestamp.js')
+        script(src='javascripts/updates.js')
+        // Latest compiled and minified CSS
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css')
+        // Optional theme
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css')
+        // Latest compiled and minified JavaScript
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js')
+        link(href='stylesheets/style.css?v=11', rel='stylesheet')
+        title!= title
+    body
+        nav.navbar.navbar-default.navbar-ex
+            .container-fluid
+                .navbar-header
+                    a.navbar-brand(href='#')
+                        div
+                            img(alt='Brand', src='images/home.png', height='100%')
+                            |  Home
+                div(ng-app='app', ng-controller='AppCtrl')
+                .right-navbar-pane
+                    a.right-navbar-icons(href='#')
+                        img(alt='Brand', src='images/plus_sign.png', height='100%')
+                    a.right-navbar-icons(href='#')
+                        img(alt='Brand', src='images/calender.png', height='100%')
+                    a.right-navbar-icons(href='#')
+                        img(alt='Brand', src='images/messages.png', height='100%')
+                    a.right-navbar-icons(href='#')
+                        img(alt='Brand', src='images/menu_lines.png', height='100%')
+        .main-container
+            .page-header
+                .page-header-row
+                    .agent-img
+                        img(height='100%', src='images/empty-profile.png')
+                    .agent-details-pane
+                        .agent-profile-pane
+                            .agent-Name-Rank
+                                .agent-name!=(cur_agent.contact.first_name + ' ' +  cur_agent.contact.last_name)
+                                .agent-rank
+                                    img(src='images/star.png', height='12px')
+                                    !=cur_agent.rank
+                            .agent-Address!=(cur_agent.contact.address.city + ' | ' +  cur_agent.contact.address.area)
+                            .agent-Level
+                                .agent-Level Level
+                                .numberCircle!=cur_agent.level
+                    .agent-active-pane
+                        .agent-active!=cur_agent.active
+                            img(src='images/on.png', height='12px')
+            .agent-acount
+                .agent-account-row
+                    .agent-balance
+                        .liner
+                            .agent-account-bold!=cur_agent.balance
+                            .agent-description-nonbold  pending revenues
+                    .agent-account-separator |
+                    .agent-apartments
+                        .liner
+                            .img-house-container
+                                img.img-house-account(src='images/home.png')
+                            .liner.valign
+                                .agent-account-bold!=cur_agent.apartments_in_process+" Apts"
+                                .agent-description-nonbold in process
+            .agent-main-grid
+                .agent-main-grid-row
+                    .agent-main-grid-day
+                        .agent-account-bold
+                            p Today
+                        .agent-notification-table
+                            - each notification in cur_agent.notifications
+                                div(id= notification.id class="agent-notification-row")
+                                    .agent-notification-cell
+                                        .notification-div
+                                            .img-notification-bg
+                                                img.img-house-notification(src='images/home.png')
+                                            .notification-title!=notification.title
+                                            .notification-desc!=notification.description
+                                            .notification-action!=notification.action
+                                            .notification-time!="<span data-livestamp="+notification.post_time+"></span>"
+
+                    .agent-main-grid-alert-center
+                        p &nbsp
+                        .agent-notification-table
+                            .agent-notification-row
+                                .agent-notification-cell
+                                    | Test
+                            .agent-notification-row
+                                .agent-notification-cell
+                                    | Test
+                            .agent-notification-row
+                                .agent-notification-cell
+                                    | Test
+                .agent-main-grid-row
+                    .agent-main-grid-day
+                        .agent-account-bold
+                            p Yesterday
+                        .agent-notification-table
+                            .agent-notification-row
+                                .agent-notification-cell
+                                    | Test
+                            .agent-notification-row
+                                .agent-notification-cell
+                                    | Test
+                            .agent-notification-row
+                                .agent-notification-cell
+                                    | Test

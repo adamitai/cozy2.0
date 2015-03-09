@@ -1,11 +1,8 @@
 <html>
 <head>
 <title>Mobile</title>
-    <!-- Library code. -->
-    <script src="bower_components/jquery/dist/jquery.js" type="text/javascript"></script>
-    <script src="bower_components/angular/angular.js" type="text/javascript"></script>
-    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js" type="text/javascript"></script>
-    <!--Bootstrep-->
+    <script src="javascripts/jquery.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
@@ -17,13 +14,20 @@
     <link href="stylesheets/style.css?v=11" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-default navbar-ex ">
+<nav class="navbar navbar-default navbar-ex " >
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">
                 <div><img alt="Brand" src="images/home.png" height="100%"/> Home</div>
             </a>
         </div>
+
+        <div ng-app="app" ng-controller="AppCtrl">
+            {{title}}
+        </div>
+
+
+
         <div class="right-navbar-pane ">
             <a class="right-navbar-icons" href="#">
                     <img alt="Brand" src="images/plus_sign.png" height="100%"/>
@@ -48,14 +52,118 @@
 </nav>
 <div class="main-container">
     <div class="page-header">
-        <div class="agent-img">
-            <img height="100%" src="images/empty-profile.png">
+        <div class="page-header-row">
+            <div class="agent-img">
+                <img height="100%" src="images/empty-profile.png">
+            </div>
+            <div class="agent-details-pane">
+                <div class="agent-profile-pane">
+                    <div class="agent-Name-Rank">
+                        <div class="agent-name">Real Person</div>
+                        <div class="agent-rank"> <img src="images/star.png" height="12px"> 8.9(374)</div>
+                    </div>
+                    <div class="agent-Address">Tel Aviv - Jaffa | City center</div>
+                    <div class="agent-Level"><div class="agent-Level">Level</div> <div class="numberCircle" >3</div></div>
+                </div>
+            </div>
+            <div class="agent-active-pane">
+                <div class="agent-active">Active <img src="images/on.png" height="12px"></div>
+            </div>
         </div>
-        <div class="agent-details-pane">
-            <div class="agent-profile-pane">
-                <div><div class="agent-name">Real Person</div>
-                <div class="agent-rank"> <img src="images/star.png" height="12px"> 8.9(374)</div></div>
-                <div><div class="agent-Address">Tel Aviv - Jaffa | City center</div>
+    </div>
+    <div class="agent-acount">
+        <div class="agent-account-row">
+            <div class="agent-balance">
+                <div class="liner">
+                    <div class="agent-account-bold">$7300</div>
+                    <div class="agent-description-nonbold"> pending revenues</div>
+                </div>
+            </div>
+            <div class="agent-account-separator">|</div>
+            <div class="agent-apartments">
+                <div class="liner">
+                    <div class="img-house-container">
+                        <img src="images/home.png" class="img-house-account" />
+                    </div>
+                    <div class="liner valign">
+                        <div class="agent-account-bold">4 Apts </div>
+                        <div class="agent-description-nonbold">in process</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="agent-main-grid">
+        <div class="agent-main-grid-row">
+            <div class="agent-main-grid-day">
+                <div class="agent-account-bold"><p>Today</p></div>
+                <div class="agent-notification-table">
+                    <div class="agent-notification-row">
+                        <div class="agent-notification-cell">
+                            <div class="notification-div">
+                                <div class="img-notification-bg">
+                                    <img src="images/home.png" class="img-house-notification"/>
+                                </div>
+                                <div class="notification-title">New apartment </div>
+                                <div class="notification-desc"> is now available to provide service</div>
+                                <div class="notification-action">Tap to sign as a reviewer</div>
+                                <div class="notification-time">12 minutes ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="agent-notification-row">
+                        <div class="agent-notification-cell">
+                            Test
+                        </div>
+                    </div>
+                    <div class="agent-notification-row">
+                        <div class="agent-notification-cell">
+                            Test
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="agent-main-grid-alert-center">
+                <p>Notifications</p>
+                <div class="agent-notification-table">
+                    <div class="agent-notification-row">
+                        <div class="agent-notification-cell">
+                            Test
+                        </div>
+                    </div>
+                    <div class="agent-notification-row">
+                        <div class="agent-notification-cell">
+                            Test
+                        </div>
+                    </div>
+                    <div class="agent-notification-row">
+                        <div class="agent-notification-cell">
+                            Test
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="agent-main-grid-row">
+            <div class="agent-main-grid-day">
+                <div class="agent-account-bold"><p>Yesterday</p></div>
+                <div class="agent-notification-table">
+                    <div class="agent-notification-row">
+                        <div class="agent-notification-cell">
+                            Test
+                        </div>
+                    </div>
+                    <div class="agent-notification-row">
+                        <div class="agent-notification-cell">
+                            Test
+                        </div>
+                    </div>
+                    <div class="agent-notification-row">
+                        <div class="agent-notification-cell">
+                            Test
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
