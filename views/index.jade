@@ -1,7 +1,23 @@
-extends layout
+//extends layout
+html
+    head
+        script(src='javascripts/AgentsUtils.js')
+        script(src='javascripts/jquery.min.js')
+        script(src='javascripts/bootstrap.min.js')
+        script(src='javascripts/moments.js')
+        script(src='javascripts/livestamp.js')
+        script(src='javascripts/updates.js')
 
-block content
-  h1= title
-  p Welcome to #{title}
-
+    body
+        block content
+          h1= title
+          p Welcome to #{title}
+        table
+            tr
+                td Agent ID
+                td
+                    input(type='text', id='AgentId', value=valueID)
+            tr
+                td
+                    input(type='button', value='Submit', onclick='checkAnswer()')
 

@@ -71,7 +71,7 @@ html
                             p Today
                         div(id="notification-table")
                             .agent-notification-table
-                                - each notification in cur_agent.notifications
+                                - each notification in cur_agent.notifications.sort()
                                     div(id= notification.id class="agent-notification-row")
                                         .agent-notification-cell
                                             .notification-div
