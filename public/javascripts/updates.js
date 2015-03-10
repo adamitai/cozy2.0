@@ -1,6 +1,6 @@
 
 $( document ).ready(function() {
-    refresh();
+    //refresh();
     var url = "http://localhost:8888/api/agents";
 
 
@@ -39,8 +39,9 @@ $( document ).ready(function() {
         setTimeout(function () {
             update_agent();
             $("#time").text("!!!!");
+            $("#0").active = false;
             //$('#time').className = "notification-time";
-            refresh();
+            //refresh();
         },4000);
     }
 

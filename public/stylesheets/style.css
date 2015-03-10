@@ -238,9 +238,25 @@ a {
 }
 
 .img-house-notification{
-    height: 60%;
-    background-color: #474751;
+    height: 13%;
     float: left;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: #474751;
+}
+.img-notification-block{
+    vertical-align: middle;
+    display: table-cell;
+}
+.img-notification-bg{
+    float: left;
+    display: block;
+
+}
+.notification-details{
+    display: table-cell;
+    vertical-align: middle;
 }
 .img-house-account{
     height: 60%;
@@ -255,8 +271,13 @@ a {
 .notification-div{
     vertical-align: middle;
     height: 100%;
-    display: list-item;
+    display: table;
 }
+
+.notification-div-row{
+    display: table-row;
+}
+
 .notification-title{
     color: #3366BB;
     font-size: 12px;
@@ -290,4 +311,10 @@ a {
     float: left;
     padding-left: 4px;
     padding-top: 2px;
+}
+
+.notification-icon-placeholder{
+    height: 100%;
+    float: left;
+    vertical-align: middle;
 }
